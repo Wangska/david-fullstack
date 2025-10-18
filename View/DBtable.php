@@ -2,9 +2,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-include $_SERVER['DOCUMENT_ROOT'].'/formv/Model/db_connect.php';
-include $_SERVER['DOCUMENT_ROOT'].'/formv/Model/getbod.php';
-include $_SERVER['DOCUMENT_ROOT'].'/formv/Model/delete.php';
+include '../Model/db_connect.php';
+include '../Model/getbod.php';
+include '../Model/delete.php';
 
 // Fetch records from the database
 $query = "SELECT user_id, last_name, first_name, middle_name, dob, sex FROM user_table";
@@ -17,12 +17,12 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Database Table</title>
-    <link rel="stylesheet" href="/formv/Css/style_dbtable.css">
+    <link rel="stylesheet" href="../Css/style_dbtable.css">
 </head>
 <body>
 
 <video autoplay muted loop id="bg-video"> 
-    <source src="/formv/bg/bgv.mp4" type="video/mp4"> 
+    <source src="../bg/bgv.mp4" type="video/mp4"> 
 </video>
 
 <div class="container">
@@ -55,7 +55,7 @@ $result = mysqli_query($conn, $query);
 
 
 <div id="button-row" class="button-row" style="display: none;">
-    <a href="/formv/View/index.php?edit=" id="edit-button" class="edit-button">
+    <a href="index.php?edit=" id="edit-button" class="edit-button">
         <i class="fas fa-edit"></i> Edit
     </a>
     <form method="POST" class="inline" id="delete-form">

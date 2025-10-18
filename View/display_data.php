@@ -3,21 +3,21 @@ session_start();
 
 // Check if form data was submitted via POST
 if (!isset($_SESSION['form_data'])) {
-    header("Location: /formv/View/index.php");
+    header("Location: index.php");
     exit;
 }
 
 $form_data = $_SESSION['form_data'];
 
 // Calculate age based on date of birth
-include $_SERVER['DOCUMENT_ROOT'].'/formv/Model/getbod.php';
+include '../Model/getbod.php';
 $age = calculateAge($form_data['dob']); 
 
 // Unset session data after use
 unset($_SESSION['form_data']);
 
 // Include the functions file
-include $_SERVER['DOCUMENT_ROOT'].'/formv/Model/functions.php'; // Adjust the path as necessary
+include '../Model/functions.php'; // Adjust the path as necessary
 ?>
 
 
@@ -27,12 +27,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/formv/Model/functions.php'; // Adjust the pa
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Submitted Data</title>
-    <link rel="stylesheet" href="/formv/Css/style_displaydata.css">
+    <link rel="stylesheet" href="../Css/style_displaydata.css">
 </head>
 <body>
 
 <video autoplay muted loop id="bg-video"> 
-    <source src="/formv/bg/bgv.mp4" type="video/mp4"> 
+    <source src="../bg/bgv.mp4" type="video/mp4"> 
 </video>
 
 <div class="data-container">
@@ -78,10 +78,10 @@ include $_SERVER['DOCUMENT_ROOT'].'/formv/Model/functions.php'; // Adjust the pa
     <div class="data-item"><strong>Mother:</strong> <?php echo displayValue(formatName($form_data['mother_last_name'], $form_data['mother_first_name'], $form_data['mother_middle_initial'])); ?></div>
 
 <div class="flex justify-center mt-8">
-    <a href="/formv/View/index.php" class="btn btn-add mr-4">
+    <a href="index.php" class="btn btn-add mr-4">
         <i class="fas fa-plus"></i> Add
     </a>
-    <a href="/formv/View/DBtable.php" class="btn btn-edit">
+    <a href="DBtable.php" class="btn btn-edit">
         <i class="fas fa-edit"></i> Edit
     </a>
 </div>

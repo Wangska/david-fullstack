@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once $_SERVER['DOCUMENT_ROOT'].'/formv/Controller/UserController.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/formv/Model/db_connect.php';
+require_once 'Controller/UserController.php';
+require_once 'Model/db_connect.php';
 
 // Initialize the UserController
 $controller = new UserController($conn);
@@ -24,12 +24,12 @@ $user = new User($form_data);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/formv/Css/style.css">
+    <link rel="stylesheet" href="Css/style.css">
     <title>Registration Form</title>
     <style>
         .error { color: red; }
     </style>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/formv/Model/scriptlocation.php'; ?>
+    <?php include 'Model/scriptlocation.php'; ?>
     <script>
         function toggleOtherInput() {
             const civilStatus = document.getElementById('civil-status').value;
@@ -40,7 +40,7 @@ $user = new User($form_data);
 </head>
 <body>
 <video autoplay muted loop id="bg-video"> 
-    <source src="/formv/bg/bgv.mp4" type="video/mp4"> 
+    <source src="bg/bgv.mp4" type="video/mp4"> 
 </video>
 
 <div class="wrapper">

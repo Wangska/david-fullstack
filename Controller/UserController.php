@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/formv/Model/UserModel.php';
+require_once 'Model/UserModel.php';
 
 class UserController {
     private $model;
@@ -33,14 +33,14 @@ class UserController {
                 $errors['email_address'] = "*Email address already exists.";
                 $_SESSION['errors'] = $errors;
                 $_SESSION['form_data'] = $data;
-                header('Location: /formv/View/index.php');
+                header('Location: index.php');
                 exit();
             }
 
             if ($this->model->saveUser ($data, $user_id)) {
                 // Store the form data in session for display
                 $_SESSION['form_data'] = $data; // Store data to display later
-                header('Location: /formv/View/display_data.php');
+                header('Location: View/display_data.php');
                 exit();
             }  else {
                 echo "Error saving user data.";
@@ -48,7 +48,7 @@ class UserController {
         } else {
             $_SESSION['errors'] = $errors;
             $_SESSION['form_data'] = $data;
-            header('Location: /formv/View/index.php');
+            header('Location: index.php');
             exit();
         }
     }
@@ -60,7 +60,7 @@ class UserController {
         if ($user) {
             session_start();
             $_SESSION['form_data'] = $user;
-            header('Location: /formv/View/index.php');
+            header('Location: index.php');
             exit();
         } else {
             echo "User  not found.";
