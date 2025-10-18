@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `user_table` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `last_name` varchar(100) NOT NULL,
   `first_name` varchar(100) NOT NULL,
   `middle_name` varchar(100) DEFAULT NULL,
@@ -73,8 +73,21 @@ CREATE TABLE `user_table` (
 -- Dumping data for table `user_table`
 --
 
-INSERT INTO `user_table` (`user_id`, `last_name`, `first_name`, `middle_name`, `dob`, `sex`, `civil_status`, `civil_status_other`, `tax_id`, `nationality`, `religion`, `unit_bldg`, `house_lot`, `street`, `subdivision`, `barangay`, `city`, `province`, `country`, `zip_code`, `mobile_no`, `email_address`, `telephone_no`, `father_last_name`, `father_first_name`, `father_middle_initial`, `mother_last_name`, `mother_first_name`, `mother_middle_initial`, `home_unit_bldg`, `home_house_lot`, `home_street`, `home_subdivision`, `home_barangay`, `home_city`, `home_province`, `home_country`, `home_zip_code`, `created_at`) VALUES
-(0, 'Mcneil', 'Amir', 'Gray Kramer', '2001-06-09', 'Female', 'Married', '', '123', 'Ipsam labore porro a', 'Aut dolorum error re', 'Sit id veniam culpa', 'Duis accusamus est', 'Et cumque ab cumque', 'Ipsa molestiae ex s', 'Voluptas nesciunt f', 'Quis laboriosam ut', 'Anim animi maxime m', 'Rwanda', '60114', '09123456789', 'cilydefa@mailinator.com', '09436536104', 'Goff', 'Keely', 'A', 'Dotson', 'Lesley', 'S', 'Omnis iste dolorum q', 'Quis enim in eos cu', 'Reiciendis omnis con', 'Optio et velit mini', 'Mollitia Nam consect', 'Distinctio Qui magn', 'Nihil voluptas aut i', 'Egypt', '76259', '2025-09-26 09:00:51');
+INSERT INTO `user_table` (`last_name`, `first_name`, `middle_name`, `dob`, `sex`, `civil_status`, `civil_status_other`, `tax_id`, `nationality`, `religion`, `unit_bldg`, `house_lot`, `street`, `subdivision`, `barangay`, `city`, `province`, `country`, `zip_code`, `mobile_no`, `email_address`, `telephone_no`, `father_last_name`, `father_first_name`, `father_middle_initial`, `mother_last_name`, `mother_first_name`, `mother_middle_initial`, `home_unit_bldg`, `home_house_lot`, `home_street`, `home_subdivision`, `home_barangay`, `home_city`, `home_province`, `home_country`, `home_zip_code`, `created_at`) VALUES
+('Mcneil', 'Amir', 'Gray Kramer', '2001-06-09', 'Female', 'Married', '', '123', 'Ipsam labore porro a', 'Aut dolorum error re', 'Sit id veniam culpa', 'Duis accusamus est', 'Et cumque ab cumque', 'Ipsa molestiae ex s', 'Voluptas nesciunt f', 'Quis laboriosam ut', 'Anim animi maxime m', 'Rwanda', '60114', '09123456789', 'cilydefa@mailinator.com', '09436536104', 'Goff', 'Keely', 'A', 'Dotson', 'Lesley', 'S', 'Omnis iste dolorum q', 'Quis enim in eos cu', 'Reiciendis omnis con', 'Optio et velit mini', 'Mollitia Nam consect', 'Distinctio Qui magn', 'Nihil voluptas aut i', 'Egypt', '76259', '2025-09-26 09:00:51');
+
+--
+-- Indexes for table `user_table`
+--
+ALTER TABLE `user_table`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for table `user_table`
+--
+ALTER TABLE `user_table`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
